@@ -43,11 +43,12 @@ client.on(Events.ClientReady, readyClient => {
   
   client.on(Events.InteractionCreate, async interaction => {
     if (!interaction.isChatInputCommand()) return;
-  
+    console.log("command getting executed by " + interaction.user.username);
     //add logic for commands here
     switch(interaction.commandName){
-
+        
         case "rivals_random_character":
+            
             const randomIndex = Math.floor(Math.random() * MarvelRoster.length);
             const randomCharacter = MarvelRoster[randomIndex];
             
